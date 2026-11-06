@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>thread-priority: priorities for T3 Code threads</title>
+<meta name="description" content="Mark T3 Code threads high, medium or low priority and see them grouped, with one slash command.">
+<style>
+:root{--bg:#0f1115;--fg:#e8eaed;--mute:#9aa0a6;--card:#171a21;--line:#262b36;--hi:#ff6b6b;--md:#f5b942;--lo:#6bb6ff}
+@media(prefers-color-scheme:light){:root{--bg:#fafafa;--fg:#16181d;--mute:#5f6670;--card:#fff;--line:#e3e6eb}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:64px 24px}
+h1{font-size:2.4rem;margin:0 0 8px;letter-spacing:-.02em}h2{margin-top:48px}
+.lead{color:var(--mute);font-size:1.15rem}
+pre{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;overflow:auto;font-size:.9rem}
+code{font-family:ui-monospace,Menlo,monospace}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.pill b{display:block;margin-bottom:4px}
+.hi{border-top:3px solid var(--hi)}.md{border-top:3px solid var(--md)}.lo{border-top:3px solid var(--lo)}
+.note{color:var(--mute);font-size:.95rem}
+a{color:var(--lo)}
+.btn{display:inline-block;margin-top:12px;padding:10px 18px;border-radius:8px;background:var(--fg);color:var(--bg);text-decoration:none;font-weight:600}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>thread-priority</h1>
+<p class="lead">See which T3 Code threads matter most. Mark each one high, medium or low, and list them grouped by priority.</p>
+<a class="btn" href="https://github.com/jovylle/thread-priority">View on GitHub</a>
+
+<div class="row">
+<div class="pill hi"><b>High</b>Pinned in T3 Code so it stays at the top.</div>
+<div class="pill md"><b>Medium</b>Tracked, not pinned.</div>
+<div class="pill lo"><b>Low</b>Tracked, not pinned. Check it later.</div>
+</div>
+
+<h2>Install</h2>
+<pre><code>/plugin install thread-priority --marketplace jovylle/thread-priority</code></pre>
+<p class="note">Type it at the prompt of a Claude Code session. Answer <code>y</code> to add the marketplace, then pick a scope.</p>
+
+<h2>Use</h2>
+<pre><code>/prio                          list threads by priority
+/prio high  fix login          mark the matching thread high (and pin it)
+/prio low   write docs         mark it low
+/prio clear write docs         remove the mark</code></pre>
+<p>Match a thread by its id or by part of its title. If more than one thread matches, you get the list and can use an id instead.</p>
+
+<h2>Good to know</h2>
+<ul>
+<li>It's an early release (0.1.0). The logic is covered by tests against a simulated T3 Code; it hasn't been verified against every T3 Code version.</li>
+<li>Priorities are stored on your machine and persist between sessions.</li>
+<li>It's a slash command. It doesn't add an item to T3 Code's right-click menu on a thread, because mods can't extend that menu.</li>
+</ul>
+
+<h2>License</h2>
+<p>MIT. Source and issues on <a href="https://github.com/jovylle/thread-priority">GitHub</a>.</p>
+</main>
+</body>
+</html>
