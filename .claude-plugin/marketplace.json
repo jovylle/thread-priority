@@ -1,0 +1,5 @@
+{
+  "name": "jovylle-mods",
+  "owner": { "name": "jovylle" },
+  "plugins": [{ "name": "thread-priority", "source": "./" }]
+}
